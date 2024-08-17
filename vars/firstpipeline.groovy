@@ -1,16 +1,16 @@
 // pipeline + groovy
 // import the calculator class from package
-import com.i27academy.bUilds.calculator
+import com.i27academy.builds.Calculator
 
 def call(Map pipelineparams){
     // An instance of the class called calculator is created
 
-    calculator calculator = new calculator(this)
+    Calculator calculator = new Calculator(this)
 
     pipeline {
         agent any
         environment {
-            APP_Name = ${pipelineparams.appName} //this value should come from the microservices
+            APP_Name = "${pipelineparams.appName}" //this value should come from the microservices
         }
         stages {
         stage ('addition') {
