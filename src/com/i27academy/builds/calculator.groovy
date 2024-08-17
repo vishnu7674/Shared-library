@@ -16,6 +16,6 @@ def add(firstnumber, secondnumber) {
 }
 
 // multiply
-def multiply((firstnumber, secondnumber)) {
+def multiply(firstnumber, secondnumber) {
     return firstnumber * secondnumber
 }
