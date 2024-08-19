@@ -4,23 +4,28 @@ import com.i27academy.builds.Calculator
 
 def call(Map pipelineparams){
     // An instance of the class called calculator is created
-
     Calculator calculator = new Calculator(this)
 
     pipeline {
-        agent any
+        agent any 
         environment {
-            APP_Name = "${pipelineparams.appName}" //this value should come from the microservices
+            APP_NAME = "${pipelineparams.appName}" // this value should be coming from microservices 
         }
         stages {
-            stage ('addition') {
+            stage('AdditionStage') {
                 steps {
-                    echo "priniting sum of 2 numbers" 
-                    println calculator.add(3,4)
-                    echo "**********microservice name is: ${APP_Name} ******"
+                    script {
+                    echo "Printing Sum of 2 numbers"
+                    println calculator.add(3,4) // add expects 2 parameters
+                    echo "****** Microservice Name is: ${APP_NAME} ********"
+                    }
+                }
+            }
+            stage ('SecondStage') {
+                steps {
+                    echo "Printing second stage"
                 }
             }
         }
     }
 }
-  
