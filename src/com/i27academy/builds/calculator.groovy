@@ -1,21 +1,24 @@
 package com.i27academy.builds;
 
-// all the methods
+
+// all the methods 
 class Calculator {
     def jenkins
-    calculator(jenkins) {
+    Calculator(jenkins) {
         this.jenkins = jenkins
     }
+
+
+
+// Addition Method
+def add(firstNumber, secondNumber){
+    // Logical code 
+    return firstNumber+secondNumber
 }
 
-
-// additon method
-def add(firstnumber, secondnumber) {
-    // logical code
-    return firstnumber+secondnumber
+// Multiplication Method
+def multiply(firstNumber, secondNumber){
+    // Logical Code
+   return firstNumber*secondNumber
 }
-
-// multiply
-def multiply(firstnumber, secondnumber) {
-    return firstnumber * secondnumber
 }
